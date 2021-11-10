@@ -9,28 +9,32 @@ import {
 import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
 import Login from './Pages/Login/Login';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
-    <div className="app">     
-      <Router>     
-        <div> 
-          {/* A <Switch> looks through its children <Route>s and
+    <AuthProvider>
+      <div className="app">
+        <Router>
+          <div>
+            {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/products">
-              <Products></Products>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </div>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="/products">
+                <Products></Products>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    </AuthProvider>
+
   );
 }
 
