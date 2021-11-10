@@ -1,0 +1,9 @@
+.product .card-footer{
+    background-color: transparent;
+    border-top: none;
+}
+
+.product .card-text{
+    list-style: none;
+    padding-left: 0;
+}
