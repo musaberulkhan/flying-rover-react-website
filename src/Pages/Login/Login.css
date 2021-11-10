@@ -1,0 +1,26 @@
+.login-container{  
+    padding: 30px 35px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.others-signin{
+    border-top: 1px solid rgb(177, 177, 177);
+}
+
+.google-signin-btn{
+    background-color: transparent;
+    border: none;
+    width: 40px;
+}
+
+.login-btn{
+    background-color: rgb(2, 95, 138);
+    color: whitesmoke;
+    border: none;
+}
+
+.login-btn:hover{
+    background-color: rgb(0, 132, 194);
+    color: whitesmoke;
+    border: none;
+}

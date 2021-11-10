@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
             <Route path="/products">
               <Products></Products>
             </Route>
-            <Route path="/">
-             
+            <Route path="/login">
+              <Login></Login>
             </Route>
           </Switch>
         </div>
