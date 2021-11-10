@@ -10,6 +10,8 @@ import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
 import Login from './Pages/Login/Login';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Purchase from './Pages/Products/Purchase/Purchase';
 
 function App() {
   return (
@@ -28,7 +30,10 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login></Login>
-              </Route>
+              </Route>             
+              <PrivateRoute path="/purchase/:id">
+                <Purchase></Purchase>
+              </PrivateRoute>
             </Switch>
           </div>
         </Router>

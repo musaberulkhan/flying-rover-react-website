@@ -2,8 +2,10 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../../Images/logo.png';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -22,7 +24,20 @@ const Header = () => {
                             <NavLink className="nav-link" to="">Disabled</NavLink>
                         </div>
                         <div>
-                            <NavLink className="nav-link" to="/login">Login</NavLink>
+                            {
+                                user?.email ? (
+                                    <div className="d-flex align-items-center">
+                                        <p className="mb-0">{user?.email}</p>
+                                        <button className="btn nav-link" onClick={logOut} >Log Out</button>
+                                    </div>
+
+                                )
+                                    :
+                                    (
+                                        <NavLink className="nav-link" to="/login">Login</NavLink>
+                                    )
+                            }
+
                         </div>
                     </div>
                 </div>

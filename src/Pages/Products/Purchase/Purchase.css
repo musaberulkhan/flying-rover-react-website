@@ -1,0 +1,21 @@
+.purchase ul{
+    list-style: none;
+}
+.purchase ul li i{
+    margin-right: 8px;
+}
+.purchase .product{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+.purchase .product-image{
+    height: 250px;
+}
+
+@media screen and (max-width: 767px) {
+    .purchase .product-image{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+  }

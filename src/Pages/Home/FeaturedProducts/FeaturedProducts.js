@@ -12,8 +12,8 @@ const FeaturedProducts = () => {
         getProducts();
     }, []);
 
-    const handleBuyNowOnClick = () => {
-        history.push('/purchase/a');
+    const handleBuyNowOnClick = (id) => {
+        history.push(`/purchase/${id}`);
     }
 
     return (
