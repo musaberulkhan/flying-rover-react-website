@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import bannerImage from '../../../Images/banner1.jpg';
 
 const Banner = () => {
@@ -15,7 +16,7 @@ const Banner = () => {
                             <h1>Looking for a Flying Machine?</h1>
                             <p>To get a drone within your budget and purpose, you are welcome to Flying Rover.
                                 We have more than 10 drones for multiple purposes. Hurry up and grab your one!</p>
-                            <button className="btn btn-success px-4">Explore All Drones</button>
+                            <Link className="btn btn-success px-4" to="/products">Explore All Drones</Link>
                         </div>
                     </div>
                 </div>

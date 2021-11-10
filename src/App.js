@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
+import Products from './Pages/Products/Products';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/users">
-              
+            <Route path="/products">
+              <Products></Products>
             </Route>
             <Route path="/">
              
