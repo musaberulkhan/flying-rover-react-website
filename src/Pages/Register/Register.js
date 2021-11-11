@@ -9,7 +9,8 @@ import RegisterImage from '../../Images/register.jpg';
 
 const Register = () => {
     // ----------- States ------------
-    const { registerUserUsingEmailPassword, setIsLoading, user } = useAuth();
+    const { registerUserUsingEmailPassword, setIsLoading, user, auth, updateProfile } = useAuth();
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [reEnteredPassword, setReEnteredPassword] = useState('');
@@ -30,7 +31,13 @@ const Register = () => {
     const handleFormLogin = (email, password) => {
         registerUserUsingEmailPassword(email, password)
             .then((userCredential) => {
-                history.push(redirect_url);
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
+                    .then(() => {
+                        history.push(redirect_url);
+                    })
+
             })
             .catch((error) => {
                 setErrorMessage("Registration Failed!")
@@ -46,7 +53,10 @@ const Register = () => {
         const isEmailValid = emailReg.test(String(email).toLowerCase());
         setErrorMessage("");
 
-        if (!isEmailValid) {
+        if (name.length === 0) {
+            setErrorMessage("Please Enter Your Name");
+        }
+        else if (!isEmailValid) {
             setErrorMessage("Invalid Email Address");
         }
         else if (password !== reEnteredPassword) {
@@ -56,10 +66,15 @@ const Register = () => {
             setErrorMessage("Password Should be more than 6 characters");
         }
         else {
-            handleFormLogin(email, password)
+            handleFormLogin(email, password, name)
         }
     }
 
+
+    // ----------- Handle Name Change ------------
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
 
     // ----------- Handle Email Change ------------
     const handleEmailChange = (e) => {
@@ -89,14 +104,17 @@ const Register = () => {
 
                                 {/* ----------- Register Form ------------ */}
                                 <form onSubmit={registerFormSubmit}>
-                                    <div className="mb-3">                                      
+                                    <div className="mb-3">
+                                        <input onBlur={handleNameChange} type="text" className="form-control single-border" placeholder="Your Name" />
+                                    </div>
+                                    <div className="mb-3">
                                         <input onBlur={handleEmailChange} type="text" className="form-control single-border" placeholder="Your email address" />
                                     </div>
-                                    <div className="mb-3">                                        
+                                    <div className="mb-3">
                                         <input onBlur={handlePasswordChange} type="password" className="form-control single-border" placeholder="Your password" />
                                     </div>
                                     <div className="mb-3">
-                                      
+
                                         <input onBlur={handleReEnteredPasswordChange} type="password" className="form-control single-border" placeholder="Re-enter password" />
                                     </div>
                                     <div className="mb-3">
