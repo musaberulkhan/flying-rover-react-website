@@ -29,7 +29,7 @@ const Header = () => {
                                 user?.email ? (
                                     <div className="d-flex align-items-center">
                                         <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
-                                        <p className="mb-0">{user?.email}</p>
+                                        <p className="mb-0">{user?.displayName}</p>
                                         <button className="btn nav-link" onClick={logOut} >Log Out</button>
                                     </div>
 

@@ -37,7 +37,6 @@ const Register = () => {
                     .then(() => {
                         history.push(redirect_url);
                     })
-
             })
             .catch((error) => {
                 setErrorMessage("Registration Failed!")
