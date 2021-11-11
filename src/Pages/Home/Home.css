@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+.home{
+    min-height: 100vh; 
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 350px; 
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .home{        
+      padding-bottom: 400px; 
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .home{        
+      padding-bottom: 700px; 
+  }
+}

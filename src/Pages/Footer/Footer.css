@@ -1,0 +1,26 @@
+.footer{  
+    background-color:#363636; 
+    padding: 35px 10px 20px 10px; 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;    
+}
+
+
+.footer .footer-logo{  
+    height: 35px;
+}
+.footer .mission{  
+    text-align: justify; 
+}
+.footer .important-links a{  
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+}
+
+.footer .important-links a:hover{  
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+}
+
