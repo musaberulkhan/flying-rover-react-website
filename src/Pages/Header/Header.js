@@ -18,15 +18,16 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <NavLink className="nav-link active" to="/">Home</NavLink>
+                            <NavLink className="nav-link" to="/">Home</NavLink>
                             <NavLink className="nav-link" to="/products">Products</NavLink>
-                            <NavLink className="nav-link" to="#">Pricing</NavLink>
-                            <NavLink className="nav-link" to="">Disabled</NavLink>
+                            <NavLink className="nav-link" to="/s">Pricing</NavLink>
+                            <NavLink className="nav-link" to="/s">Disabled</NavLink>
                         </div>
                         <div>
                             {
                                 user?.email ? (
                                     <div className="d-flex align-items-center">
+                                        <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
                                         <p className="mb-0">{user?.email}</p>
                                         <button className="btn nav-link" onClick={logOut} >Log Out</button>
                                     </div>

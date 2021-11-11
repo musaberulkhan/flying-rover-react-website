@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Products/Purchase/Purchase';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -30,9 +31,12 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login></Login>
-              </Route>             
+              </Route>
               <PrivateRoute path="/purchase/:id">
                 <Purchase></Purchase>
+              </PrivateRoute>
+              <PrivateRoute path="/dashboard">
+                <Dashboard></Dashboard>
               </PrivateRoute>
             </Switch>
           </div>
