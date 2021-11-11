@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import useProducts from '../../Hooks/useProducts';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Product from './Product/Product';
 import './Products.css'
@@ -18,7 +19,7 @@ const Products = () => {
     }
 
     return (
-        <div>
+        <div className="footer-parent">
             <Header></Header>
             <div className="container my-5">
                 <h2 className="text-center my-5">Our All Drones</h2>
@@ -32,6 +33,7 @@ const Products = () => {
                     }
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

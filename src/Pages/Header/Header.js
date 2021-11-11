@@ -16,14 +16,15 @@ const Header = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <NavLink className="nav-link" to="/">Home</NavLink>
                             <NavLink className="nav-link" to="/products">Products</NavLink>
                             <NavLink className="nav-link" to="/s">Pricing</NavLink>
                             <NavLink className="nav-link" to="/s">Disabled</NavLink>
-                        </div>
-                        <div>
+                        </div>                        
+                    </div>
+                    <div>
                             {
                                 user?.email ? (
                                     <div className="d-flex align-items-center">
@@ -40,7 +41,6 @@ const Header = () => {
                             }
 
                         </div>
-                    </div>
                 </div>
             </nav>
         </div>
