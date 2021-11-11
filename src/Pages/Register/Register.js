@@ -1,78 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import './Login.css';
-import { useHistory, useLocation } from 'react-router';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import GoogleLogo from '../../Images/google.png';
-// import useAuth from '../../Hooks/useAuth';
-import Header from '../Header/Header';
 import useAuth from '../../Hooks/useAuth';
-import LoginImage from '../../Images/login.jpg';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import './Register.css';
+import RegisterImage from '../../Images/register.jpg';
 
-
-
-const Login = () => {
-    //  // ----------- States ------------
-    const { signInUsingGoogle, signInUserUsingEmailPassword, setIsLoading, user } = useAuth();
+const Register = () => {
+    // ----------- States ------------
+    const { registerUserUsingEmailPassword, setIsLoading, user } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('')
+    const [reEnteredPassword, setReEnteredPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
 
-
-    // ----------- Location ------------
-    const location = useLocation();
+    // ----------- Location ------------     
     const history = useHistory();
-    const redirect_url = location.state?.from || '/';
+    const redirect_url = '/';
 
-    //  ------------   Redirect if user already logged in    -------------
     useEffect(() => {
         if (user?.email) {
             history.push("/");
         }
     }, [user]);
 
-    // ----------- Handle Google Sign In ------------
-    const handleGoogleSignIn = () => {
-        signInUsingGoogle()
-            .then(result => {
-                history.push(redirect_url);
-            })
-            .finally(() => setIsLoading(false))
-    }
-
     // ----------- Handle Form Login ------------
     const handleFormLogin = (email, password) => {
-        signInUserUsingEmailPassword(email, password)
+        registerUserUsingEmailPassword(email, password)
             .then((userCredential) => {
                 history.push(redirect_url);
             })
             .catch((error) => {
-                setErrorMessage("Invalid Email or Password!")
+                setErrorMessage("Registration Failed!")
             })
             .finally(() => setIsLoading(false));
     }
 
 
-    // ----------- Handle Login Form Submit ------------
-    const loginFormSubmit = (e) => {
+    // ----------- Handle Register Form Submit ------------
+    const registerFormSubmit = (e) => {
         e.preventDefault();
-
-        // -----------   Email Validation   ----------
         const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isEmailValid = emailReg.test(String(email).toLowerCase());
         setErrorMessage("");
 
-
-        // -----------   Check for Error   ----------
         if (!isEmailValid) {
             setErrorMessage("Invalid Email Address");
+        }
+        else if (password !== reEnteredPassword) {
+            setErrorMessage("Password didn't match! Please check again");
         }
         else if (password.length <= 6) {
             setErrorMessage("Password Should be more than 6 characters");
         }
         else {
-            handleFormLogin(email, password);
+            handleFormLogin(email, password)
         }
     }
 
@@ -87,6 +71,11 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
+    // ----------- Handle Reentered Password Change ------------
+    const handleReEnteredPasswordChange = (e) => {
+        setReEnteredPassword(e.target.value);
+    }
+
 
     return (
         <div className="footer-parent">
@@ -96,44 +85,40 @@ const Login = () => {
                     <div className="col-md-7">
                         <div className="login container d-flex justify-content-center align-items-center my-5">
                             <div className="login-container">
-                                <h3 className="text-center mb-4">Login</h3>
+                                <h3 className="text-center mb-4">Create New Account</h3>
 
-                                {/* ----------- Login Form ------------ */}
-                                <form onSubmit={loginFormSubmit}>
+                                {/* ----------- Register Form ------------ */}
+                                <form onSubmit={registerFormSubmit}>
                                     <div className="mb-3">                                      
-                                        <input onBlur={handleEmailChange} type="email" className="form-control single-border" placeholder="Your email address" />
+                                        <input onBlur={handleEmailChange} type="text" className="form-control single-border" placeholder="Your email address" />
                                     </div>
                                     <div className="mb-3">                                        
                                         <input onBlur={handlePasswordChange} type="password" className="form-control single-border" placeholder="Your password" />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="submit" className="btn px-5 mt-3 login-btn w-100" value="Login" />
+                                      
+                                        <input onBlur={handleReEnteredPasswordChange} type="password" className="form-control single-border" placeholder="Re-enter password" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <input type="submit" className="btn login-btn px-5 mt-4 w-100" value="Register" />
                                     </div>
                                     <p className="text-danger">{errorMessage}</p>
                                 </form>
 
-                                {/* ----------- Register Link ------------ */}
-                                <p>Don't have an account? <Link to="/register">Create Account</Link></p>
-
-                                {/* ----------- Google Sign In------------ */}
-                                <div className="d-flex flex-column align-items-center others-signin">
-                                    <p className="my-2">Or Login With</p>
-                                    <button onClick={handleGoogleSignIn} className="google-signin-btn">
-                                        <img className="img-fluid" src={GoogleLogo} alt="" />
-                                    </button>
-                                </div>
+                                {/* ----------- Login Link ------------ */}
+                                <p>Already have an account? <Link to="/login">Login</Link></p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-5 d-flex align-items-center">
-                        <img className="img-fluid" src={LoginImage} alt="" />
+                        <img className="img-fluid" src={RegisterImage} alt="" />
                     </div>
-                </div>            
+                </div>
             </div>
+
             <Footer></Footer>
         </div>
-
     );
 };
 
-export default Login;
+export default Register;

@@ -88,6 +88,12 @@ const Purchase = () => {
                                     <input defaultValue={user?.displayName || ""} type="text" className="form-control" {...register("name", { required: true })} />
                                     <p className="text-danger">{errors.name?.type === 'required' && "Name is required"}</p>
                                 </div>
+                                {/* -----------------   Phone Number    --------------- */}
+                                <div className="mb-3">
+                                    <label className="form-label">Phone Number</label>
+                                    <input type="text" placeholder="Phone Number" className="form-control" {...register("phone", { required: true })} />
+                                    <p className="text-danger">{errors.phone?.type === 'required' && "Phone number is required"}</p>
+                                </div>
 
                                 {/* -----------------   Address    --------------- */}
                                 <div className="mb-3">

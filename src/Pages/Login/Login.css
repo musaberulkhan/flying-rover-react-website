@@ -1,6 +1,5 @@
 .login-container{  
     padding: 30px 35px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .others-signin{
@@ -11,6 +10,13 @@
     background-color: transparent;
     border: none;
     width: 40px;
+}
+
+.single-border{
+    padding-left: 5px;
+    border-radius: 0;
+    border:none;
+    border-bottom: 1px solid rgb(110, 110, 110);
 }
 
 .login-btn{

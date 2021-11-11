@@ -13,6 +13,9 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Products/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import PurchaseSuccessful from './Pages/Products/Purchase/PurchaseSuccessful/PurchaseSuccessful';
+import Register from './Pages/Register/Register';
+
 
 function App() {
   return (
@@ -32,8 +35,14 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
+              <Route path="/register">
+                <Register></Register>
+              </Route>
               <PrivateRoute path="/purchase/:id">
                 <Purchase></Purchase>
+              </PrivateRoute>
+              <PrivateRoute path="/purchaseSuccessful">
+                <PurchaseSuccessful></PurchaseSuccessful>
               </PrivateRoute>
               <PrivateRoute path="/dashboard">
                 <Dashboard></Dashboard>
