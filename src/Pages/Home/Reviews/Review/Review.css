@@ -1,0 +1,13 @@
+.review .card{
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.review .card-footer{
+    background-color: transparent;
+    border-top: none;
+}
+
+.review .card-text{
+    list-style: none;
+    padding-left: 0;
+}

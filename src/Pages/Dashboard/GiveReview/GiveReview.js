@@ -10,7 +10,8 @@ const GiveReview = () => {
     const onSubmit = data => {
         // ----------------------   Get Form data and add status   -----------------------
         const formData = data;
-        formData.user = user.email;
+        formData.email = user.email;
+        formData.displayName = user?.displayName;
 
         // ----------------------   Send Form Data to Server    -----------------------
         fetch('http://localhost:5000/reviews', {

@@ -7,14 +7,18 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        setReviews([]);
+        fetch(`http://localhost:5000/reviews`)
+        .then(res => res.json())
+        .then(data => setReviews(data));        
     }, []);
+
+    console.log(reviews);
 
     return (
         <div>            
             <div className="container py-5">
                 <h2 className="text-center my-5">Customer Reviews</h2>
-                <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-4">
                     {
                         reviews?.map(review => <Review
                             key={review._id}
