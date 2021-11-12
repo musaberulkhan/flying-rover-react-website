@@ -8,6 +8,7 @@ import './Dashboard.css';
 import DashboardHome from './DashboardHome/DashboardHome';
 import GiveReview from './GiveReview/GiveReview';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
 import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Sidebar from './Sidebar/Sidebar';
@@ -44,6 +45,9 @@ const Dashboard = () => {
                     </AdminRoute>
                     <AdminRoute path={`${path}/add-product`}>
                         <AddProduct></AddProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manage-all-orders`}>
+                        <ManageAllOrders></ManageAllOrders>
                     </AdminRoute>
                     {/* <AdminRoute path={`${path}/addDoctor`}>
                         

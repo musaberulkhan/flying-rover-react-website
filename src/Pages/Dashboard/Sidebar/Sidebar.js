@@ -13,10 +13,10 @@ const Sidebar = () => {
                     {
                         admin ? (
                             <div className="nav_list">
-                                <Link to="/" className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Manage All Orders</span> </Link>
+                                <Link to={`${url}/manage-all-orders`} className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Manage All Orders</span> </Link>
                                 <Link to={`${url}/add-product`} className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Add A Product</span> </Link>
                                 <Link to={`${url}/make-admin`} className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Make Admin</span> </Link>
-                                <Link to="/" className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Manage Products</span> </Link>
+                                <Link to={`${url}/manage-products`} className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Manage Products</span> </Link>
                                 <button onClick={logOut} className="nav_link btn"> <i className='bx bx-folder nav_icon'></i> <span className="nav_name">Logout</span> </button>
                             </div>
                         ) :
