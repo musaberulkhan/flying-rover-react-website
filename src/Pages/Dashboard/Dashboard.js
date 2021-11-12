@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import './Dashboard.css';
 import DashboardHome from './DashboardHome/DashboardHome';
+import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Sidebar from './Sidebar/Sidebar';
 
@@ -25,6 +26,9 @@ const Dashboard = () => {
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
+                    </Route>
+                    <Route path={`${path}/my-orders`}>
+                        <MyOrders></MyOrders>
                     </Route>
                     {/* <AdminRoute path={`${path}/addDoctor`}>
                         

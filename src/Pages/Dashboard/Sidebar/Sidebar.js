@@ -12,7 +12,7 @@ const Sidebar = () => {
                     <div className="nav_list">
                         <Link to={url} className="nav_link"> <i className='bx bx-grid-alt nav_icon'></i> <span className="nav_name">Home</span> </Link>
                         <Link to={`${url}/pay`} className="nav_link"> <i className='bx bx-user nav_icon'></i> <span className="nav_name">Pay</span> </Link>
-                        <Link to="/my-orders" className="nav_link"> <i className='bx bx-message-square-detail nav_icon'></i> <span className="nav_name">My Orders</span> </Link>
+                        <Link to={`${url}/my-orders`} className="nav_link"> <i className='bx bx-message-square-detail nav_icon'></i> <span className="nav_name">My Orders</span> </Link>
                         <Link to="/review" className="nav_link"> <i className='bx bx-bookmark nav_icon'></i> <span className="nav_name">Review</span> </Link>
 
                         <Link to="/" className="nav_link"> <i className='bx bx-bar-chart-alt-2 nav_icon'></i> <span className="nav_name">Make All Orders</span> </Link>

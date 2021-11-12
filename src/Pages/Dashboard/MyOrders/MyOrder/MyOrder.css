@@ -1,0 +1,13 @@
+.my-order {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.my-order .package-image {
+    height: 180px;
+}
+
+.my-order ul{
+    list-style: none;
+}
+.my-order ul li i{
+    margin-right: 8px;
+}
