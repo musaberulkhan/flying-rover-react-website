@@ -18,7 +18,7 @@ const Reviews = () => {
         <div>            
             <div className="container py-5">
                 <h2 className="text-center my-5">Customer Reviews</h2>
-                <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-4">
+                <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3">
                     {
                         reviews?.map(review => <Review
                             key={review._id}
