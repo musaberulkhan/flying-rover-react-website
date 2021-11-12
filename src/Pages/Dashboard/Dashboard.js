@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import AddProduct from './AddProduct/AddProduct';
 import './Dashboard.css';
 import DashboardHome from './DashboardHome/DashboardHome';
 import GiveReview from './GiveReview/GiveReview';
@@ -40,6 +41,9 @@ const Dashboard = () => {
                     </Route>
                     <AdminRoute path={`${path}/make-admin`}>
                         <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/add-product`}>
+                        <AddProduct></AddProduct>
                     </AdminRoute>
                     {/* <AdminRoute path={`${path}/addDoctor`}>
                         
