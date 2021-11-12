@@ -9,7 +9,7 @@ const useFirebase = () => {
     // -------  States   ----------
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    // const [invalidUser, setInvalidUser] = useState(false);
+    const [admin, setAdmin] = useState(false);
 
     //--------   Firebase Auth   --------
     const auth = getAuth();
@@ -22,26 +22,18 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider);
     }
 
-    // --------   Log Out  --------
-    const logOut = () => {
-        setIsLoading(true);
-        signOut(auth)
-            .then(() => {
-                setUser();
-            })
-            .finally(() => setIsLoading(false));
-    }
+
 
     // --------   Register Using Email and Password  --------
     const registerUserUsingEmailPassword = (email, password) => {
         setIsLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);           
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     // --------   Sign In Using Email and Password  --------
     const signInUserUsingEmailPassword = (email, password) => {
         setIsLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)            
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     //--------  Observer User State  -----------
@@ -54,7 +46,24 @@ const useFirebase = () => {
         });
     }, [])
 
+    //--------  Set Admin State  -----------
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user?.email])
 
+
+    // --------   Log Out  --------
+    const logOut = () => {
+        setIsLoading(true);
+        signOut(auth)
+            .then(() => {
+                setUser();
+            })
+            .finally(() => setIsLoading(false));
+    }
+    //--------  Save user info to DB  -----------
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
         fetch('http://localhost:5000/users', {
@@ -71,8 +80,9 @@ const useFirebase = () => {
     // ---------- Return all elements  ---------
     return {
         user,
-        auth,  
-        saveUser,      
+        auth,
+        admin,
+        saveUser,
         updateProfile,
         signInUsingGoogle,
         logOut,

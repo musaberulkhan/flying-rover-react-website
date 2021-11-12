@@ -1,9 +1,12 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import AdminRoute from '../AdminRoute/AdminRoute';
 import './Dashboard.css';
 import DashboardHome from './DashboardHome/DashboardHome';
 import GiveReview from './GiveReview/GiveReview';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
 import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Sidebar from './Sidebar/Sidebar';
@@ -15,7 +18,8 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <header className="header text-white" id="header">
-                Welcome back, {user?.displayName}
+               <p className="mb-0"> Welcome back, {user?.displayName}</p>
+               <Link className="text-white btn" to="/">Back to Shopping</Link>
             </header>
             <div className="l-navbar" id="nav-bar">
                 <Sidebar></Sidebar>
@@ -34,6 +38,9 @@ const Dashboard = () => {
                     <Route path={`${path}/give-review`}>
                         <GiveReview></GiveReview>
                     </Route>
+                    <AdminRoute path={`${path}/make-admin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
                     {/* <AdminRoute path={`${path}/addDoctor`}>
                         
                     </AdminRoute> */}
