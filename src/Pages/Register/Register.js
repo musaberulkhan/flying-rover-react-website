@@ -9,7 +9,7 @@ import RegisterImage from '../../Images/register.jpg';
 
 const Register = () => {
     // ----------- States ------------
-    const { registerUserUsingEmailPassword, setIsLoading, user, auth, updateProfile } = useAuth();
+    const { registerUserUsingEmailPassword, setIsLoading, user, auth, saveUser, updateProfile } = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -30,11 +30,12 @@ const Register = () => {
     // ----------- Handle Form Login ------------
     const handleFormLogin = (email, password) => {
         registerUserUsingEmailPassword(email, password)
-            .then((userCredential) => {
+            .then((userCredential) => {           
+                saveUser(userCredential.user.email, name, 'POST')
                 updateProfile(auth.currentUser, {
                     displayName: name
                 })
-                    .then(() => {
+                    .then(() => {                        
                         history.push(redirect_url);
                     })
             })

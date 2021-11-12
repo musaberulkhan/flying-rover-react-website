@@ -12,7 +12,6 @@ const Reviews = () => {
         .then(data => setReviews(data));        
     }, []);
 
-    console.log(reviews);
 
     return (
         <div>            

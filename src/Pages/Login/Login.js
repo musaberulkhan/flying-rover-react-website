@@ -13,7 +13,7 @@ import Footer from '../Footer/Footer';
 
 const Login = () => {
     //  // ----------- States ------------
-    const { signInUsingGoogle, signInUserUsingEmailPassword, setIsLoading, user } = useAuth();
+    const { signInUsingGoogle, signInUserUsingEmailPassword, setIsLoading, user, saveUser } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('')
@@ -35,7 +35,8 @@ const Login = () => {
     // ----------- Handle Google Sign In ------------
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
-            .then(result => {
+            .then(result => {               
+                saveUser(result.user?.email, result.user?.displayName, 'PUT')
                 history.push(redirect_url);
             })
             .finally(() => setIsLoading(false))

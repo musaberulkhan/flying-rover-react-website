@@ -7,7 +7,7 @@ const Review = (props) => {
 
     const ratingStars = {        
         size: 30,
-        value: rating,
+        value: parseInt(rating),
         edit: false
       };
 
