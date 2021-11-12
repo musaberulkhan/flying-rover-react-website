@@ -69,7 +69,7 @@ const Login = () => {
         if (!isEmailValid) {
             setErrorMessage("Invalid Email Address");
         }
-        else if (password.length <= 6) {
+        else if (password.length < 6) {
             setErrorMessage("Password Should be more than 6 characters");
         }
         else {
