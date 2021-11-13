@@ -15,6 +15,8 @@ import Purchase from './Pages/Products/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import PurchaseSuccessful from './Pages/Products/Purchase/PurchaseSuccessful/PurchaseSuccessful';
 import Register from './Pages/Register/Register';
+import TrainingDetails from './Pages/TrainingDetails/TrainingDetails';
+import About from './Pages/About/About';
 
 
 function App() {
@@ -37,6 +39,12 @@ function App() {
               </Route>
               <Route path="/register">
                 <Register></Register>
+              </Route>
+              <Route path="/training">
+                <TrainingDetails></TrainingDetails>
+              </Route>
+              <Route path="/about">
+                <About></About>
               </Route>
               <PrivateRoute path="/purchase/:id">
                 <Purchase></Purchase>

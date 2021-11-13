@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import traningImage from '../../../Images/training.jpg';
 import './Training.css';
 
@@ -14,7 +15,7 @@ const Training = () => {
                                 After completing this training we will issue a professional certificate. If you are looking for a complete drone flying course,
                                 you may join this course to make your dream true.
                             </p>
-                            <button className="btn btn-success px-4">View Course Details</button>
+                            <Link to="/training" className="btn btn-success px-4">View Course Details</Link>
                         </div>
                     </div>
                     <div className="col-md-6 col-12 p-3">

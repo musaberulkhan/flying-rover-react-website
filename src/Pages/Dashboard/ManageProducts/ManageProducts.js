@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import useProducts from '../../../Hooks/useProducts';
 import ManageProduct from './ManageProduct/ManageProduct';
 import './ManageProducts.css';
