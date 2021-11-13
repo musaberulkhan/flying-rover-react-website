@@ -21,12 +21,12 @@ const Dashboard = () => {
         <div className="dashboard">
             <header className="header text-white" id="header">
                <p className="mb-0"> Welcome back, {user?.displayName}</p>
-               <Link className="text-white btn" to="/">Back to Shopping</Link>
+               <Link className="text-white btn" to="/"><i class="fas fa-arrow-left me-2"></i>Back to Shopping</Link>
             </header>
             <div className="l-navbar" id="nav-bar">
                 <Sidebar></Sidebar>
             </div>
-            <div className="height-100 bg-light p-2">
+            <div className="dashboard-body height-100 p-2">
                 <Switch>
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>

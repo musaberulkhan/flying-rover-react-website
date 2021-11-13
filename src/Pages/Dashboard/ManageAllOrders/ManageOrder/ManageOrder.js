@@ -16,19 +16,18 @@ const ManageOrder = (props) => {
     }, []);
 
     return (
-        <div className="my-order m-3 p-3 d-flex flex-column flex-md-row align-items-center">
+        <div className="manage-order m-3 p-3 d-flex flex-column flex-md-row align-items-center">
             <div className="">
-                <img className="package-image img-fluid mb-3 mb-md-0" src={product?.image} alt="" />
+                <img className="product-image img-fluid mb-3 mb-md-0" src={product?.image} alt="" />
             </div>
             <div className="ms-4">
                 <h3>{product?.name}</h3>
                 <h5>Price: {product?.price}</h5>
-                <ul>
+                <ul className="ps-2">
                     {
-                        product?.details?.map(detail => <li
-                            key={detail}
-                        >
-                            <i className="fas fa-check"></i>{detail}</li>)
+                        product?.features?.map(feature => <li
+                            key={feature}
+                        > - {feature}</li>)
                     }
                 </ul>
                 <h6>Status: {status}</h6>

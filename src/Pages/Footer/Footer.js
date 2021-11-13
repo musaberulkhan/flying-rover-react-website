@@ -12,11 +12,11 @@ const Footer = () => {
                     <div className="col-md-4 col-12 p-3">
                         <div className="d-flex align-items-center">
                             <img className="footer-logo" src={logo} alt="" />
-                            <h5 className="ms-2 mb-0 mt-1">TO-EUROPA</h5>
+                            <h5 className="ms-2 mb-0 mt-1">FLYING ROVER</h5>
                         </div>
                         <p className="mission pe-lg-3 fs-6 pt-1">
-                            We provide attractive packages to tour Europe. We have more than 10 destinations and local office for any support.
-                            Our packages includes two way air ticket, decent hotel, Food, Airport Pickup Service and more.
+                            We provide attractive drones for multiple purposes. We have more than 10 drones and online drone flying tutorial.
+                            Our drones come with all accessories and 1 year replacement warranty and 2 years free servicing.
                         </p>
                     </div>
 

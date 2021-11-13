@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 :root {
-    --header-height: 2rem;
+    --header-height: 3rem;
     --nav-width: 230px;
     --first-color: #2c2c2c;
     --first-color-light: #dbdbdb;
@@ -26,19 +26,22 @@
 }
 
 .dashboard a {
-    text-decoration: none
+    text-decoration: none;    
+}
+
+.dashboard-body{
+    margin-left: 80px;
 }
 
 .header {
     width: 100%;
-    height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 10px 0 90px;
     background-color: var(--first-color);
     z-index: var(--z-fixed);
     transition: .5s
@@ -48,14 +51,18 @@
 .l-navbar {
     position: fixed;
     top: 0;  
-    width: var(--nav-width);
+    width: 80px;
     height: 100vh;
-    background-color: var(--first-color);
-    padding: .5rem 1rem 0 0;
+    background-color: var(--first-color);  
     transition: .5s;
     z-index: var(--z-fixed)
 }
 
+.responsive-form{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 @media screen and (min-width: 768px) {
     .dashboard {
@@ -63,13 +70,22 @@
         padding-left: calc(var(--nav-width))
     }
 
+    .dashboard-body{
+        margin-left: 0;
+    }    
+
     .header {
-        height: calc(var(--header-height) + 1rem);
-        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+        height: calc(var(--header-height) );
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
     }    
 
     .l-navbar {
         left: 0;
-        padding: 1rem 1rem 0 0
+        padding: 1rem 1rem 0 0;
+        width: var(--nav-width);        
     }        
+
+    .responsive-form{
+        width: 350px;
+    }
 }

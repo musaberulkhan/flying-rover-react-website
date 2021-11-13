@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import './Purchase.css';
 
@@ -51,12 +52,13 @@ const Purchase = () => {
 
 
     return (
-        <div className="purchase">
+        <div className="purchase footer-parent">
             <Header></Header>
             <div className="container mb-5">
                 <h2 className="text-center my-5">Purchase Product</h2>
                 <div className="row">
-                    <div className="product col-md-4 px-4 py-3">                        
+                    {/* -----------  Purchase Product Details  ------------ */}
+                    <div className="product col-md-4 px-4 py-3">
                         <div className="text-center mb-3">
                             <img className="product-image me-5" src={product?.image} alt="" />
                         </div>
@@ -71,11 +73,13 @@ const Purchase = () => {
                                         {feature}</li>)
                                 }
                             </ul>
+                            <h6>Rating: {product.rating}</h6>
+                            <h6>Sales: {product.sales}+</h6>
                         </div>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 my-3">
                         {/* ----------------------   Billing Information    ----------------------- */}
-                        <h4 className="mb-3 text-center">Billing Information</h4>
+                        <h4 className="my-3 text-center">Billing Information</h4>
                         <div className="d-flex justify-content-center">
                             {/* -----------------   Billing Information Form    --------------- */}
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -128,12 +132,8 @@ const Purchase = () => {
                         </div>
                     </div>
                 </div>
-                {
-                    // -----------  Purchase Product Details  ------------
-
-                }
-
             </div>
+            <Footer></Footer>
         </div>
     );
 };

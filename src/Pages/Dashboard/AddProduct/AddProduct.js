@@ -37,7 +37,7 @@ const AddProduct = () => {
             <h2 className="text-center pb-4">Add New Product</h2> 
             <div className="d-flex justify-content-center">
                 {/*  ----------------------   Add New Package Form     ----------------------- */}
-                <form style={{width: '350px'}} onSubmit={handleSubmit(onSubmit)}>
+                <form className="responsive-form" onSubmit={handleSubmit(onSubmit)}>
                     {/*  ----------------------   Package Name     ----------------------- */}
                     <div className="mb-3">
                         <label className="form-label">Product Name</label>

@@ -17,15 +17,15 @@ const Product = (props) => {
                                 features.map(detail => <li
                                     key={detail}
                                 >
-                                    {detail}</li>)
+                                    - {detail}</li>)
                             }
                         </ul>
                     </div>
                     <div className="card-footer">
                         <h5 className="px-2">Price: ${price} </h5>
                         <div className="d-flex justify-content-between">
-                            <h6><i className="fas fa-star"></i> {rating}</h6>
-                            <h6>Sales: {sales}</h6>
+                            <h6><i style={{color:'#f5cc00'}} className="fas fa-star"></i> {rating}</h6>
+                            <h6>Sales: {sales}+</h6>
                         </div>
                         <button onClick={() => handleBuyNowOnClick(_id)} className="w-100 btn btn-success">Buy Now</button>
                     </div>

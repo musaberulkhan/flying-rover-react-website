@@ -1,0 +1,13 @@
+.manage-order {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.manage-order .product-image {
+    height: 180px;
+}
+
+.manage-order ul{
+    list-style: none;
+}
+.manage-order ul li i{
+    margin-right: 8px;
+}
