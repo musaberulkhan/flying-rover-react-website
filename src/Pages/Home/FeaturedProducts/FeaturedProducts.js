@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import useProducts from '../../../Hooks/useProducts';
-import Header from '../../Header/Header';
 import Product from '../../Products/Product/Product';
 
 const FeaturedProducts = () => {

@@ -14,14 +14,14 @@ import Pay from './Pay/Pay';
 import Sidebar from './Sidebar/Sidebar';
 
 const Dashboard = () => {
-    let { path, url } = useRouteMatch();
+    let { path } = useRouteMatch();
     const { user } = useAuth();
 
     return (
         <div className="dashboard">
             <header className="header text-white" id="header">
                <p className="mb-0"> Welcome back, {user?.displayName}</p>
-               <Link className="text-white btn" to="/"><i class="fas fa-arrow-left me-2"></i>Back to Shopping</Link>
+               <Link className="text-white btn" to="/"><i className="fas fa-arrow-left me-2"></i>Back to Shopping</Link>
             </header>
             <div className="l-navbar" id="nav-bar">
                 <Sidebar></Sidebar>

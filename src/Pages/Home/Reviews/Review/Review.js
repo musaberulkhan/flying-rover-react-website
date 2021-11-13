@@ -3,7 +3,7 @@ import ReactStars from 'react-stars';
 import './Review.css';
 
 const Review = (props) => {
-    const { comment, rating, email, displayName } = props.review;
+    const { comment, rating, displayName } = props.review;
 
     const ratingStars = {        
         size: 30,

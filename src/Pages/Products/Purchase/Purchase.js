@@ -8,8 +8,7 @@ import './Purchase.css';
 
 const Purchase = () => {
     const { id } = useParams();
-    const [product, setProduct] = useState({});
-    const [formData, setFormData] = useState({});
+    const [product, setProduct] = useState({});    
     const history = useHistory();
     const { user } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
