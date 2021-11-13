@@ -9,6 +9,7 @@ import DashboardHome from './DashboardHome/DashboardHome';
 import GiveReview from './GiveReview/GiveReview';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
+import ManageProducts from './ManageProducts/ManageProducts';
 import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import Sidebar from './Sidebar/Sidebar';
@@ -49,9 +50,10 @@ const Dashboard = () => {
                     <AdminRoute path={`${path}/manage-all-orders`}>
                         <ManageAllOrders></ManageAllOrders>
                     </AdminRoute>
-                    {/* <AdminRoute path={`${path}/addDoctor`}>
-                        
-                    </AdminRoute> */}
+                    <AdminRoute path={`${path}/manage-products`}>
+                        <ManageProducts></ManageProducts>
+                    </AdminRoute>
+                   
                 </Switch>
             </div>
 

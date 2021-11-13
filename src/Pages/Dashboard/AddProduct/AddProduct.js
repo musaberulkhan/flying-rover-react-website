@@ -16,7 +16,7 @@ const AddProduct = () => {
        
 
         // ----------------------   Send Form Data to Server    -----------------------
-        fetch('http://localhost:5000/products', {
+        fetch('https://whispering-chamber-62649.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

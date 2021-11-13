@@ -5,10 +5,10 @@ const useProducts = () => {
 
     
     const getProducts = () => {
-        fetch(`http://localhost:5000/products`)
+        fetch(`https://whispering-chamber-62649.herokuapp.com/products`)
         .then(res => res.json())
         .then(data => setProducts(data));
-    }    
+    }     
 
      // ---------- Return all elements  ---------
      return {

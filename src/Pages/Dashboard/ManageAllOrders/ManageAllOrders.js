@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
 
     //  ----------------    Get Order Details Using Email   ---------------
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://whispering-chamber-62649.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [updateId]);
@@ -20,7 +20,7 @@ const ManageAllOrders = () => {
     const handleCancelOrderButton = id => {
         const processed = window.confirm('Are you sure you want to delete?');
         if (processed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://whispering-chamber-62649.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
 
     //  ----------------    Handle Approve Order Button   ---------------
     const handleApproveOrderButton = id => {
-        fetch(`http://localhost:5000/orderUpdate/${id}`)
+        fetch(`https://whispering-chamber-62649.herokuapp.com/orderUpdate/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {

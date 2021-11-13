@@ -10,7 +10,7 @@ const MyOrders = () => {
 
     //  ----------------    Get Order Details Using Email   ---------------
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://whispering-chamber-62649.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);
@@ -19,7 +19,7 @@ const MyOrders = () => {
     const handleCancelOrderButton = id => {
         const processed = window.confirm('Are you sure you want to delete?');
         if (processed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://whispering-chamber-62649.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

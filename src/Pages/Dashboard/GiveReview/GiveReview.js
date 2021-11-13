@@ -14,7 +14,7 @@ const GiveReview = () => {
         formData.displayName = user?.displayName;
 
         // ----------------------   Send Form Data to Server    -----------------------
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://whispering-chamber-62649.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

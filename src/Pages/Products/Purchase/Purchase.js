@@ -15,7 +15,7 @@ const Purchase = () => {
 
     // ----------------------   Load Package Details    -----------------------
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://whispering-chamber-62649.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);
@@ -30,7 +30,7 @@ const Purchase = () => {
         formData.status = "pending";
 
         // ----------------------   Send Form Data to Server    -----------------------
-        fetch('http://localhost:5000/orders', {
+        fetch('https://whispering-chamber-62649.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,12 +64,12 @@ const Purchase = () => {
                         <div>
                             <h4>{product.name}</h4>
                             <h5>Price: ${product.price}</h5>
-                            <ul>
+                            <ul className="ps-1">
                                 {
                                     product?.features?.map(feature => <li
                                         key={feature}
                                     >
-                                        {feature}</li>)
+                                       - {feature}</li>)
                                 }
                             </ul>
                             <h6>Rating: {product.rating}</h6>
@@ -126,7 +126,7 @@ const Purchase = () => {
                                 </div>
 
                                 {/* -----------------   Booking Button    --------------- */}
-                                <input className="btn btn-success" type="submit" value="Confirm Booking" />
+                                <input className="btn btn-success" type="submit" value="Confirm Purchase" />
                             </form>
                         </div>
                     </div>
