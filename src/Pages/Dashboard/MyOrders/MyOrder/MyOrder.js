@@ -21,7 +21,7 @@ const MyOrder = (props) => {
             </div>
             <div className="ms-4">
                 <h3>{product?.name}</h3>
-                <h5>Price: {product?.price}</h5>
+                <h5>Price: ${product?.price}</h5>
                 <ul>
                     {
                         product?.details?.map(detail => <li

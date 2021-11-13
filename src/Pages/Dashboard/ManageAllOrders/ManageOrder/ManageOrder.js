@@ -8,6 +8,7 @@ const ManageOrder = (props) => {
     const [product, setProduct] = useState({});
 
 
+    // ----------Load Products----------
     useEffect(() => {
         fetch(`https://whispering-chamber-62649.herokuapp.com/products/${productId}`)
             .then(res => res.json())
@@ -21,7 +22,7 @@ const ManageOrder = (props) => {
             </div>
             <div className="ms-4">
                 <h3>{product?.name}</h3>
-                <h5>Price: {product?.price}</h5>
+                <h5>Price: ${product?.price}</h5>
                 <ul className="ps-2">
                     {
                         product?.features?.map(feature => <li
@@ -33,7 +34,7 @@ const ManageOrder = (props) => {
                 {
                     status === "pending" ?
                     (
-                        <button onClick={() => handleApproveOrderButton(_id)} className="btn btn-success me-2">Approve Order</button>
+                        <button onClick={() => handleApproveOrderButton(_id)} className="btn btn-success me-2">Shipped</button>
                     )
                     :
                     (
